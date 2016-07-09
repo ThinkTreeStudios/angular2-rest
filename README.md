@@ -15,7 +15,8 @@ npm install angular2-rest
 import {Request, Response} from '@angular/http';
 import {
   RESTClient, GET, PUT, POST, DELETE, BaseUrl,
-  Headers, DefaultHeaders, Path, Body, Query
+  Headers, DefaultHeaders, Path, Body, Query,
+  Produces, MediaType
 } from 'angular2-rest';
 import {Todo} from './models/Todo';
 
