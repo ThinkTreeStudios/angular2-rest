@@ -6,7 +6,7 @@ var gulp = require('gulp'),
   tsc = require('gulp-tsc'),
   typescript = require('gulp-typescript'),
   typedoc = require("gulp-typedoc");
-  
+
 var objectMerge = require('object-merge');
 
 var tsProject = typescript.createProject('./tsconfig.json');
