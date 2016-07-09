@@ -5,7 +5,7 @@ Angular2 HTTP client to consume RESTful services. Built on angular2/http with Ty
 ## Installation
 
 ```sh
-npm install angular2-rest
+npm install https://github.com/mayur-mi/angular2-rest.git
 ```
 
 ## Example
@@ -94,6 +94,7 @@ export class ToDoCmp {
 - `@POST(url: String)`
 - `@PUT(url: String)`
 - `@DELETE(url: String)`
+- `@PRODUCES(producesDef: MediaType)`
 - `@Headers(headers: Object)`
 
 ### Parameter decorators:
