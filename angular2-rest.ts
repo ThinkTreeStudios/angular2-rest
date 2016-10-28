@@ -258,7 +258,12 @@ function methodBuilder(method: number) {
 
                 // intercept the response
                 observable = this.responseInterceptor(observable);
-
+				var apiCall = observable.share()
+				apiCall.subscribe((success) => {
+					console.log(success);
+				}, (error) => {
+					console.log(success);
+				})
                 return observable;
             };
 
