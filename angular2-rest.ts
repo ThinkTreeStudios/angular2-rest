@@ -255,15 +255,13 @@ function methodBuilder(method: number) {
                 if (descriptor.isJSON) {
                   observable = observable.map(res => res.json());
                 }
+                
+                // share the observable with multiple subscribers to avoid duplicate HTTP calls.
+                observable = observable.share()
 
                 // intercept the response
                 observable = this.responseInterceptor(observable);
-				var apiCall = observable.share()
-				apiCall.subscribe((success) => {
-					console.log(success);
-				}, (error) => {
-					console.log(success);
-				})
+				
                 return observable;
             };
 

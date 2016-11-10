@@ -253,6 +253,10 @@ function methodBuilder(method) {
                 if (descriptor.isJSON) {
                     observable = observable.map(function (res) { return res.json(); });
                 }
+                
+                // share the observable with multiple subscribers to avoid duplicate HTTP calls.
+                observable = observable.share()
+                
                 // intercept the response
                 observable = this.responseInterceptor(observable);
                 return observable;
